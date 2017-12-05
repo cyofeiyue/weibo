@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-Ajax-client</title>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+
+            $('button').click(function () {
+                console.log('xxx');
+
+                // 底层请求
+//                $.ajax('server.php', {
+//                    'async': true,
+//                    'data': 'name=sz',
+//                    'beforeSend': function(xhr) {
+////                        return false;
+//                    },
+//                    'success': function(data, textStatus, jqXHR) {
+//                        console.log(data + textStatus);
+//                    },
+//                    'timeout': 2000
+//                });
+//                console.log('哈哈哈, 我出来了');
+
+//                var box = document.getElementById('box');
+//                $('#box').load('server.php', function () {
+//                    console.log('加载完毕');
+//                })
+
+//                var json = $.getJSON('server.php','name=sz', function (result) {
+//                    console.log(result);
+//                });
+//                console.log(json);
+
+                var str = $('#form').serialize();
+                console.log(str);
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+<button>发送请求</button>
+<div id="box">
+
+</div>
+
+<form id="form" action="server.php">
+
+    <input type="text" name="account">
+    <input type="text" name="pwd">
+    <input type="text" name="address">
+
+</form>
+
+
+</body>
+</html>

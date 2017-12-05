@@ -1,0 +1,47 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.box {
+    width: 400px;
+    height: 300px;
+    margin: 100px auto;
+    border: 1px solid goldenrod;
+}
+
+#left,#right {
+    width: 95px;
+    height: 300px;
+    float: left;
+}
+#center {
+    width: 200px;
+    height: 300px;
+    float: left;
+    position: relative;
+}
+
+li {
+    width: 100px;
+    height: 34px;
+    border-bottom: 1px dashed red;
+    box-sizing: border-box;
+}
+
+#center img {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+li:hover {
+    background: green;
+}
+
+

@@ -1,0 +1,78 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body {
+    background-image: url("../images/body_bg.jpg");
+}
+
+.box {
+    width: 700px;
+    margin:100px auto;
+}
+
+.input {
+    width: 700px;
+    height: 200px;
+    border: 1px solid deeppink;
+    background-color: white;
+    border-radius: 6px;
+}
+.input .content {
+    width: 690px;
+    height: 150px;
+    margin: 5px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    resize: none;
+}
+.input .submit {
+    width: 100px;
+    height: 30px;
+    float: right;
+    background: orangered;
+    color: white;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.dataList {
+    width: 600px;
+    margin: 50px auto;
+
+}
+
+.dataList>ul>li {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: slategray;
+    background: lightblue;
+    margin-bottom: 5px;
+    border-radius: 40px;
+    text-indent: 10px;
+}
+
+.pageNum {
+    position: relative;
+}
+.pageNum ul {
+    position: absolute;
+    right: 0px;
+}
+
+.pageNum ul li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 1px dashed orangered;
+    text-align: center;
+    line-height: 20px;
+    margin: 5px;
+    color: gray;
+}
+.pageNum ul .current {
+    background: lightyellow;
+}

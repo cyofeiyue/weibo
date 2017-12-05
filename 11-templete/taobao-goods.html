@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-淘宝商品展示-(UI界面搭建)</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/template-web.js"></script>
+    <script src="js/index.js"></script>
+    <!--准备数据-->
+    <script>
+        var leftData = {
+            'titles': ['登山鞋','冬裙','毛衣','棉服','男包','男毛衣','男棉服','男靴','呢大衣']
+        };
+        var rightData = {
+            'titles': ['牛仔裤','女包','女裤','女靴','皮带','皮衣','围巾','雪地靴','羽绒服']
+        }
+        var imageNames = [];
+        for (var i = 0; i < leftData.titles.length + rightData.titles.length; i++) {
+            if (i < leftData.titles.length) {
+                imageNames.push('taobaoImg/'+leftData.titles[i]+'.jpg');
+            }else {
+                imageNames.push('taobaoImg/'+rightData.titles[i - leftData.titles.length]+'.jpg');
+            }
+        }
+        var middleData = {
+            'imageNames': imageNames
+        }
+
+
+    </script>
+
+
+    <!--定义模板-->
+    <script id="list-tmp" type="text/html">
+        <ul>
+            {{ each titles value }}
+            <li>{{ value }}</li>
+            {{/each}}
+        </ul>
+    </script>
+    <script id="image-tmp" type="text/html">
+        {{each imageNames value}}
+        <img src="{{value}}" alt="">
+        {{/each}}
+    </script>
+
+    <!--渲染数据到模板-->
+    <script>
+        window.onload = function () {
+            // 左侧菜单渲染
+            var left = document.getElementById('left');
+            var html = template('list-tmp', leftData);
+            left.innerHTML = html;
+
+            // 右侧菜单渲染
+            var right = document.getElementById('right');
+            var html = template('list-tmp', rightData);
+            right.innerHTML = html;
+
+            // 中间图片渲染
+            var center = document.getElementById('center');
+            var html = template('image-tmp', middleData);
+            center.innerHTML = html;
+
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="box">
+    <div id="left">
+    </div>
+
+    <div id="center">
+    </div>
+
+    <div id="right">
+    </div>
+
+</div>
+
+
+</body>
+</html>
